@@ -21,6 +21,18 @@ public class loginPage {
     @FindBy(id ="login-submit" )
     webElement loginButton;
 
+    // learn button xpath
+    @FindBy(xpath ="//button[contains(@class, 'nav-dropdown-trigger')]")
+    webElement learnButton;
+
+    // learning materials
+    @FindBy(xpath ="//span[text()='Learning Materials']")
+    webElement learningMaterialButton;
+
+    //web automation advanced
+    @FindBy( css = "[value='web']")
+    webElement advancedButton;
+
     // Figure out how to click buttons and stuff during the weekend
 
 }
