@@ -63,46 +63,30 @@ public class inventoryPage {
     // click next button
     // verify that invoice field is displayed maybe
     @FindBy(xpath = "//button[@type='submit']")
+
     public WebElement nextButton;
 
-    // This method handles the "Communication" to the next step
-    public void selectDeviceType() {
-        typeButton.click();
-        phoneButton.click();
-
-
-
-    }
 
     // stops at clicking apple
-    public void selectDeviceAndBrand() throws InterruptedException {
-        // 1. Pause so you can see the page is loaded
-        Thread.sleep(2000);
+    public void selectDeviceAndBrand() {
 
-        // 2. Click Device Type Dropdown
-        typeButton.click();
-        Thread.sleep(1000); // Wait 1 second to see it open
+        wait.until(elementToBeClickable(typeButton)).click();
 
         // 3. Select Phone
         phoneButton.click();
         System.out.println("Clicked Phone");
 
-        // 4. Wait 1 second before Brand selection
-        Thread.sleep(1000);
-
         // 5. Click Brand Dropdown
-        selectButton.click();
-        Thread.sleep(1000); // Wait 1 second to see it open
+        wait.until(elementToBeClickable(selectButton)).click();
 
-        // 6. Select Apple
         brandButton.click();
         System.out.println("Clicked Apple");
     }
 
     // selects storage, colour, quantity,delivery address and clicks next
-    public void deviceSpecsAndAddress() throws InterruptedException {
+    public void deviceSpecsAndAddress() {
         storageButton.click();
-        pickColor.click();
+        wait.until(visibilityOf( pickColor)).click();
         colourBlueButton.click();
         quantityButton.clear();
         quantityButton.sendKeys("2");
