@@ -93,6 +93,4 @@ mvn test
 # Run a single TestNG test class (example)
 mvn -Dtest=Tests.LoginTest test
 
-# If chromedriver is not on PATH (Windows example):
-mvn -Dwebdriver.chrome.driver="C:\\path\\to\\chromedriver.exe" -Dtest=Tests.LoginTest test
 ```
